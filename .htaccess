@@ -5,11 +5,13 @@ AddDefaultCharset UTF-8
 
 <IfModule mod_rewrite.c>
 RewriteEngine on
-RewriteBase /lp/
+#RewriteBase /lp/
+RewriteBase /
 RewriteCond $1 !^(index\.php|robots\.txt|favicon\.ico)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /lp/index.php?page=$1 [QSA] 
+#RewriteRule ^(.*)$ /lp/index.php?page=$1 [QSA] 
+RewriteRule ^(.*)$ /index.php?page=$1 [QSA] 
 </IfModule>
 
 <IfModule deflate_module>
